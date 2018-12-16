@@ -1,0 +1,389 @@
+
+.nav__wrapper {
+	display: block;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px 0
+}
+
+.nav__wrapper--amp .nav {
+	margin-bottom: 2px
+}
+
+.nav__wrapper--amp .nav-menu__btn {
+	height: 36px;
+	margin-bottom: 10px
+}
+
+.nav {
+	margin-top: 0;
+	height: 5.7rem;
+	box-sizing: border-box;
+	padding: 0 8rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center
+}
+
+@media (max-width:1024px) {
+	.nav {
+			padding: 0 20px;
+			box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px 0
+	}
+}
+
+.nav-menu--name {
+	display: inline-block;
+	width: 100%;
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 1px
+}
+
+.nav__title {
+	display: flex;
+	justify-content: space-between
+}
+
+.nav__name-wrapper {
+	float: left;
+	display: flex;
+	align-items: center
+}
+
+.nav__name {
+	float: left;
+	margin: 0;
+	width: 12.5rem;
+	padding-bottom: 0;
+	line-height: 0
+}
+
+.nav__logo {
+	max-width: 100%
+}
+
+.nav__byline {
+	float: left;
+	font-size: 1.1rem;
+	line-height: 1.2em;
+	font-weight: 300;
+	margin: 0.5rem 0 0 .8rem;
+	padding-bottom: 0;
+	color: #6e6e6e
+}
+
+.nav__byline__link {
+	font-size: 1.2rem;
+	color: #6e6e6e
+}
+
+.nav-menu__btn {
+	float: right;
+	position: relative;
+	height: 26px;
+	cursor: pointer
+}
+
+.nav-menu--mob {
+	display: block;
+	position: relative;
+	top: 0;
+	width: 30px;
+	height: 4px;
+	background: #326C9B;
+	border-radius: 10px;
+	border: 1px solid #326C9B;
+	transform: rotate(0deg);
+	transition: 0.3s ease transform, 0.3s ease top 0.2s
+}
+
+.nav-menu--mid {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	transition: 0.1s ease all
+}
+
+.nav-menu:not(.nav-menu--amp) {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: space-between
+}
+
+@media (max-width:1024px) {
+	.nav-menu:not(.nav-menu--amp) {
+			display: none
+	}
+}
+
+amp-img.nav__logo {
+	max-width: 100%
+}
+
+amp-img.nav__logo img {
+	width: 100%
+}
+
+@media (max-width:1024px) {
+	amp-sidebar.nav-menu {
+			display: inherit
+	}
+}
+
+.nav--active {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	overflow: scroll;
+	z-index: 32
+}
+
+.nav--active .nav {
+	flex-wrap: wrap
+}
+
+.nav--active .nav-menu--mid {
+	background: transparent;
+	border: none
+}
+
+.nav--active .nav-menu--top {
+	transform: rotate(45deg);
+	top: 9px;
+	transition: 0.3s ease top, 0.3s ease transform 0.2s
+}
+
+.nav--active .nav-menu--bottom {
+	transform: rotate(-45deg);
+	top: -9px;
+	transition: 0.3s ease top, 0.3s ease transform 0.2s
+}
+
+.nav--active .nav-menu {
+	position: absolute;
+	display: block;
+	width: calc(100% - 4.4rem);
+	top: 8.4rem;
+	left: 20px
+}
+
+.nav--active .nav-menu>a {
+	font-size: 1.7rem
+}
+
+.nav--active .nav-menu__item {
+	padding-bottom: 3rem;
+	padding-top: 3rem
+}
+
+.nav--active .nav-menu__item:after {
+	display: block
+}
+
+.nav--active .nav-menu__item:last-child:after {
+	display: none
+}
+
+.nav--active .nav-disclosure {
+	margin-right: 0
+}
+
+.nav--active .nav-disclosure a {
+	font-size: 1.4rem
+}
+
+@media (min-width:1024px) {
+	.nav {
+			max-width: 1440px;
+			margin: 0 auto
+	}
+}
+
+@media (min-width:600px) {
+	.nav__name {
+			width: 20rem
+	}
+}
+
+@media (min-width:600px) {
+	.nav__byline {
+			margin-top: 1.3rem
+	}
+}
+
+@media (min-width:1024px) {
+	.nav__byline {
+			font-size: 1.4rem
+	}
+}
+
+@media (min-width:1024px) {
+	.nav__byline__link {
+			font-size: 1.4rem
+	}
+}
+
+.nav-menu__btn {
+	z-index: 5
+}
+
+@media (min-width:1024px) {
+	.nav-menu--mob {
+			display: none
+	}
+}
+
+.nav__byline__link:hover {
+	border-bottom: 1px solid #6e6e6e
+}
+
+.nav-menu__item {
+	position: relative;
+	align-items: center;
+	font-size: 1.6rem
+}
+
+.nav-menu__item a.nav--blog:after {
+	background: #369
+}
+
+.nav-menu__item a.nav--current:after {
+	opacity: 1;
+	bottom: 0
+}
+
+.nav-menu__item a.nav--credit:after {
+	background: #674F83
+}
+
+.nav-menu__item a.nav--mortgages:after {
+	background: #369
+}
+
+.nav-menu__item a.nav--brokerages:after {
+	background: #104471
+}
+
+.nav-menu__item a.nav--loans:after {
+	background: #936
+}
+
+.nav-menu__item a.nav--banking:after {
+	background: #2e842e
+}
+
+.nav-menu__item:after {
+	display: none;
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 1px;
+	left: 0;
+	bottom: 0;
+	background: #979797
+}
+
+@media (min-width:1024px) {
+	.nav-menu__item {
+			display: flex;
+			height: 100%;
+			margin-left: 4rem
+	}
+}
+
+@media (min-width:1224px) {
+	.nav-menu__item {
+			margin-left: 5rem
+	}
+}
+
+.nav-menu__link {
+	position: static;
+	text-decoration: none;
+	color: #474747;
+	transition: 0.4s ease all
+}
+
+.nav-menu__link:after {
+	position: absolute;
+	content: "";
+	opacity: 0;
+	width: 100%;
+	bottom: 10px;
+	left: 0;
+	right: 0;
+	height: 4px;
+	transition: 0.3s ease all
+}
+
+.nav-menu__link:hover {
+	color: #474747
+}
+
+.nav-menu__link:hover:after {
+	opacity: 1;
+	bottom: 0
+}
+
+
+
+
+.tooltip__parent:not(.nav-disclosure__wrapper) .tooltip--active:before {
+	display: none
+}
+
+.tooltip__parent:not(.nav-disclosure__wrapper) .info__wrapper {
+	display: inline-block;
+	width: 20px;
+	height: 15px
+}
+
+
+.nav-disclosure__wrapper {
+	position: relative;
+	display: inline-block;
+	width: auto
+}
+
+.nav-disclosure__wrapper .disclosure__heading {
+	color: #C14282;
+	padding-bottom: 1rem
+}
+
+.nav-disclosure {
+	position: relative;
+	text-align: right;
+	padding-top: 1rem;
+	font-size: initial;
+	grid-row: 1;
+	z-index: 20
+}
+
+.nav-disclosure--lg {
+	padding-right: 2.2rem
+}
+
+.homepage .nav-disclosure--lg {
+	background: none
+}
+
+.nav-disclosure a {
+	display: block;
+	position: relative;
+	font-size: 1.4rem
+}
+
+.nav-disclosure>a {
+	color: #C14282;
+	text-decoration: none;
+	z-index: 10
+}
+
+@media (min-width:1024px) {
+	.nav-disclosure {
+			padding-right: 8rem;
+			z-index: 30
+	}
+}
+/* THE ABOVE IS INTENDED TO RETAIN ORIGINAL/INITIAL FUNCTIONALITY */  
+/* THE FOLLOWING ADDS DROP-DOWN STYLING */
