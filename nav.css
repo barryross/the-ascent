@@ -394,3 +394,15 @@ amp-img.nav__logo img {
 }
 /* THE ABOVE IS INTENDED TO RETAIN ORIGINAL/INITIAL FUNCTIONALITY */  
 /* THE FOLLOWING ADDS DROP-DOWN STYLING */
+
+/* Initially hide sub-menus by default */
+.nav-submenu{
+	display:none;
+	border: 1px solid black;
+	position:absolute;
+}
+
+/* Display submenu when top-level menu item is hovered over */
+.nav-menu__item:hover .nav-submenu {
+	display:block;
+}
