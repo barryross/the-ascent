@@ -390,151 +390,197 @@ amp-img.nav__logo img {
 	.nav-disclosure {
 			padding-right: 8rem;
 			z-index: 30
-	}n
-}
-/* THE ABOVE IS INTENDED TO RETAIN ORIGINAL/INITIAL FUNCTIONALITY */  
-/* THE FOLLOWING ADDS DROP-DOWN STYLING */
-
-.nav{
-	margin-right:75px; /* In order to make space for blog dropdown */
-}
-.nav-menu__link:after{display:none;} /* to remove previous styling*/
-
-button.nav-arrow{
-	border:none;
-	display:flex;
-	align-items: flex-end;
-	background:transparent;
-}
-button.nav-arrow:hover{
-	cursor:pointer;
-}
-button.nav-arrow svg{
-	width:15px;
-	height:15px;
-}
-li.has-submenu:hover svg,
-li.has-submenu:focus svg,
-li.has-submenu.open svg{
-	fill:white;
-}
-/* adds underline after top-level item */
-
-li.has-submenu:after {
-	position: absolute;
-	display:block;
-	content: "";
-	opacity: 0;
-	width: 175px;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 4px;
-	transition: 0.3s ease all;
+	}
 }
 
-li.nav-menu__item:hover,
-li.nav-menu__item:focus,
-li.has-submenu.open:after{
-	opacity:1;
-}
 
-/* general styling for lists within the nav */
-.nav-menu ul {
-	list-style:none;
-	padding:0;
-	box-sizing:border-box;
-}
+	/* THE ABOVE IS INTENDED TO RETAIN ORIGINAL/INITIAL FUNCTIONALITY */  
+	/* THE FOLLOWING ADDS DROP-DOWN STYLING */
 
-/* layout of primary menu list */
-.nav-menu-list{
-	display: flex;
-	margin:0;
-	height:100%;
-}
+	
+	/* general styling for lists within the nav */
+	.nav-menu ul {
+		list-style:none;
+		padding:0;
+		box-sizing:border-box;
+	}
+.nav-menu__item.nav--blog a:after {
+		background: #369;
+	}
 
-/* top-level items positioned so submenus can be positioned relative to them */
-.nav-menu-list > li {
-	position:relative;
-}
-
-/* Targets 1st & 2nd level nav items so they took up width and height of li */
- a.nav-menu__link{
-	width:100%;
-	height:100%;
-	display:flex;
-	align-items:center;
-	padding: 0 5px;
-}
-
-/* Top-level and submenu links should appear white when hovered over */
-li.nav-menu__item:hover > a.nav-menu__link,
-li.nav-menu__item:focus > a.nav-menu__link,
-li.nav-menu__item.open > a.nav-menu__link,
-li.nav-submenu__item.open > a.nav-menu__link{
-	color:white;
-}
-
-li.nav-menu__item:active{
-	border-top:2px solid black;
-}
-
-li.nav-menu__item.nav--credit:hover,
-li.nav-menu__item.nav--credit:focus,
-li.nav-menu__item.nav--credit.open,
-li.nav-menu__item.nav--credit.open:after, 
-li.nav-menu__item.nav--credit > ul.nav-submenu-list li.open {
+.nav-menu__item.nav--credit a:after {
 	background: #674F83;
 }
 
-li.nav-menu__item.nav--banking:hover,
-li.nav-menu__item.nav--banking:focus,
-li.nav-menu__item.nav--banking.open,
-li.nav-menu__item.nav--banking.open:after, 
-li.nav-menu__item.nav--banking > ul.nav-submenu-list li.open {
-	background: #2e842e;
-}
-li.nav-menu__item.nav--brokerages.hover, 
-li.nav-menu__item.nav--brokerages.focus, 
-li.nav-menu__item.nav--brokerages.open, 
-li.nav-menu__item.nav--brokerages.open:after, 
-li.nav-menu__item.nav--brokerages > ul.nav-submenu-list li.open  {
-	background: #104471;
-}
-
-li.nav-menu__item.nav--loans.hover,
-li.nav-menu__item.nav--loans.focus,  
-li.nav-menu__item.nav--loans.open, 
-li.nav-menu__item.nav--loans.open:after, 
-li.nav-menu__item.nav--loans > ul.nav-submenu-list li.open  {
-	background: #936;
-}
-li.nav-menu__item.nav--blog.hover, 
-li.nav-menu__item.nav--blog.focus, 
-li.nav-menu__item.nav--blog.open, 
-li.nav-menu__item.nav--blog.open:after, 
-li.nav-menu__item.nav--blog > ul.nav-submenu-list li.open  {
+.nav-menu__item.nav--mortgages a:after {
 	background: #369;
 }
 
-/* Initially hide sub-menus by default */
-ul.nav-submenu-list{
-	display:none;
-	border: 1px solid rgba(151,151,151,0.47);
-	top: 100%;
-	left:0;
-	right:0;
-	position:absolute;
-	width:auto;
-	width: 175px;
-	font-size:.8em;
+.nav-menu__item.nav--brokerages a:after {
+	background: #104471;
 }
 
-.nav-submenu-list > li a.nav-menu__link {
-	padding: 8px 5px;
+.nav-menu__item.nav--loans a:after {
+	background: #936;
 }
 
-/* Display submenu when top-level menu item is hovered over */
-.nav-menu__item.open .nav-submenu-list {
-	display:block;
+.nav-menu__item.nav--banking a:after {
+	background: #2e842e;
+}
+
+@media (min-width: 1024px){
+
+
+	body{
+		background:white;
+		color:black;
+	}
+
+	.nav{
+		margin-right:75px; /* In order to make space for blog dropdown */
+	}
+	.nav-menu__link:after{display:none;} /* to remove previous styling*/
+
+	button.nav-arrow{
+		border:none;
+		display:flex;
+		align-items: flex-end;
+		background:transparent;
+	}
+	button.nav-arrow:hover{
+		cursor:pointer;
+	}
+	button.nav-arrow svg{
+		width:15px;
+		height:15px;
+	}
+	li.has-submenu:hover svg,
+	li.has-submenu:focus svg,
+	li.has-submenu.open svg{
+		fill:white;
+	}
+	/* adds underline after top-level item */
+
+	li.has-submenu:after {
+		position: absolute;
+		display:block;
+		content: "";
+		opacity: 0;
+		width: 175px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 4px;
+		transition: 0.3s ease all;
+	}
+
+	li.nav-menu__item:hover,
+	li.nav-menu__item:focus,
+	li.has-submenu.open:after{
+		opacity:1;
+	}
+
+
+
+	/* layout of primary menu list */
+	.nav-menu-list{
+		display: flex;
+		margin:0;
+		height:100%;
+	}
+
+	/* top-level items positioned so submenus can be positioned relative to them */
+	.nav-menu-list > li {
+		position:relative;
+	}
+
+	/* Targets 1st & 2nd level nav items so they took up width and height of li */
+	a.nav-menu__link{
+		width:100%;
+		height:100%;
+		display:flex;
+		align-items:center;
+		padding: 0 5px;
+	}
+
+	/* Top-level and submenu links should appear white when hovered over */
+	li.nav-menu__item:hover > a.nav-menu__link,
+	/*li.nav-menu__item:focus > a.nav-menu__link, */
+	/* li.nav-menu__item.open > a.nav-menu__link, */
+	li.nav-submenu__item.open > a.nav-menu__link{
+		color:white;
+	}
+
+
+
+	li.nav-menu__item.nav--credit:hover,
+	/* li.nav-menu__item.nav--credit:focus,
+	li.nav-menu__item.nav--credit.open, */
+	li.nav-menu__item.nav--credit.open:after, 
+	li.nav-menu__item.nav--credit > ul.nav-submenu-list li.open {
+		background: #674F83;
+	}
+
+	li.nav-menu__item.nav--banking:hover,
+	li.nav-menu__item.nav--banking:focus,
+	li.nav-menu__item.nav--banking.open,
+	li.nav-menu__item.nav--banking > ul.nav-submenu-list li.open {
+		background: #2e842e;
+	}
+	li.nav-menu__item.nav--brokerages.hover, 
+	li.nav-menu__item.nav--brokerages.focus, 
+	li.nav-menu__item.nav--brokerages.open, 
+	li.nav-menu__item.nav--brokerages.open:after, 
+	li.nav-menu__item.nav--brokerages > ul.nav-submenu-list li.open  {
+		background: #104471;
+	}
+
+	li.nav-menu__item.nav--loans.hover,
+	li.nav-menu__item.nav--loans.focus,  
+	li.nav-menu__item.nav--loans.open, 
+	li.nav-menu__item.nav--loans.open:after, 
+	li.nav-menu__item.nav--loans > ul.nav-submenu-list li.open  {
+		background: #936;
+	}
+	li.nav-menu__item.nav--blog.hover, 
+	li.nav-menu__item.nav--blog.focus, 
+	li.nav-menu__item.nav--blog.open, 
+	li.nav-menu__item.nav--blog.open:after, 
+	li.nav-menu__item.nav--blog > ul.nav-submenu-list li.open  {
+		background: #369;
+	}
+
+	/* Initially hide sub-menus by default */
+	ul.nav-submenu-list{
+		display:none;
+		border: 1px solid rgba(151,151,151,0.47);
+		top: 100%;
+		left:0;
+		right:0;
+		position:absolute;
+		width:auto;
+		width: 175px;
+		font-size:.8em;
+	}
+
+	.nav-submenu-list > li a.nav-menu__link {
+		padding: 8px 5px;
+	}
+
+	/* Display submenu when top-level menu item is hovered over */
+	.nav-menu__item.open .nav-submenu-list {
+		display:block;
+	}
+}
+
+/* Hide submenus on smaller screens */
+@media screen and (max-width:1024px){
+	.nav-submenu-list{display:none;}
+	button.nav-arrow{display:none;}
+
+	.nav-menu__link:hover:after{
+		display:block;
+		bottom:0px;
+		opacity:1;
+	}
 }
