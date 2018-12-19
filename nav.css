@@ -320,7 +320,7 @@ amp-img.nav__logo img {
 	left: 0;
 	right: 0;
 	height: 4px;
-	transition: 0.3s ease all
+	transition: 0.1s ease all
 }
 
 .nav-menu__link.open {
@@ -394,42 +394,42 @@ amp-img.nav__logo img {
 }
 
 
-	/* THE ABOVE IS INTENDED TO RETAIN ORIGINAL/INITIAL FUNCTIONALITY */  
-	/* THE FOLLOWING ADDS DROP-DOWN STYLING */
+	/* ^^^^ THE ABOVE IS INTENDED TO RETAIN ORIGINAL/INITIAL FUNCTIONALITY */  
+	/* THE FOLLOWING ADDS DROP-DOWN STYLING  */
 
 	
-	/* general styling for lists within the nav */
+	/* Applies general styles to lists within the nav */
 	.nav-menu ul {
 		list-style:none;
 		padding:0;
-		box-sizing:border-box;
 	}
-.nav-menu__item.nav--blog a:after {
+
+	/* Assists with mobile styling */
+	.nav-menu__item.nav--blog a:after {
 		background: #369;
 	}
 
-.nav-menu__item.nav--credit a:after {
-	background: #674F83;
-}
+	.nav-menu__item.nav--credit a:after {
+		background: #674F83;
+	}
 
-.nav-menu__item.nav--mortgages a:after {
-	background: #369;
-}
+	.nav-menu__item.nav--mortgages a:after {
+		background: #369;
+	}
 
-.nav-menu__item.nav--brokerages a:after {
-	background: #104471;
-}
+	.nav-menu__item.nav--brokerages a:after {
+		background: #104471;
+	}
 
-.nav-menu__item.nav--loans a:after {
-	background: #936;
-}
+	.nav-menu__item.nav--loans a:after {
+		background: #936;
+	}
 
-.nav-menu__item.nav--banking a:after {
-	background: #2e842e;
-}
+	.nav-menu__item.nav--banking a:after {
+		background: #2e842e;
+	}
 
 @media (min-width: 1024px){
-
 
 	body{
 		background:white;
@@ -437,30 +437,34 @@ amp-img.nav__logo img {
 	}
 
 	.nav{
-		margin-right:75px; /* In order to make space for blog dropdown */
+		margin-right:75px; /* Adds sufficient space for dropdowns to appear */
 	}
-	.nav-menu__link:after{display:none;} /* to remove previous styling*/
+
+	.nav-menu__link:after{display:none;} /* Compensates for styles in existing css */
 
 	button.nav-arrow{
 		border:none;
+		height:100%;
 		display:flex;
 		align-items: flex-end;
 		background:transparent;
 	}
+
+	li.has-submenu a:hover, 
 	button.nav-arrow:hover{
 		cursor:pointer;
 	}
+
 	button.nav-arrow svg{
 		width:15px;
 		height:15px;
 	}
-	li.has-submenu:hover svg,
-	li.has-submenu:focus svg,
+
 	li.has-submenu.open svg{
 		fill:white;
 	}
-	/* adds underline after top-level item */
 
+	/* Adds underline after top-level item */
 	li.has-submenu:after {
 		position: absolute;
 		display:block;
@@ -471,32 +475,29 @@ amp-img.nav__logo img {
 		left: 0;
 		right: 0;
 		height: 4px;
-		transition: 0.3s ease all;
+		transition: 0.2s ease all;
 	}
 
-	li.nav-menu__item:hover,
-	li.nav-menu__item:focus,
+	li.has-submenu:hover,
+	li.has-submenu:focus,
 	li.has-submenu.open:after{
 		opacity:1;
 	}
 
-
-
-	/* layout of primary menu list */
+	/* Layout of primary menu list */
 	.nav-menu-list{
 		display: flex;
 		margin:0;
 		height:100%;
 	}
 
-	/* top-level items positioned so submenus can be positioned relative to them */
+	/* Positions top-level items so that submenus can be positioned relative to them */
 	.nav-menu-list > li {
 		position:relative;
 	}
 
-	/* Targets 1st & 2nd level nav items so they took up width and height of li */
+	/* Tweaks layout of 1st & 2nd level link items so they take up more space */
 	a.nav-menu__link{
-		width:100%;
 		height:100%;
 		display:flex;
 		align-items:center;
@@ -504,76 +505,77 @@ amp-img.nav__logo img {
 	}
 
 	/* Top-level and submenu links should appear white when hovered over */
-	li.nav-menu__item:hover > a.nav-menu__link,
-	/*li.nav-menu__item:focus > a.nav-menu__link, */
-	/* li.nav-menu__item.open > a.nav-menu__link, */
-	li.nav-submenu__item.open > a.nav-menu__link{
+	li.nav-menu__item > a.nav-menu__link:hover,
+	li.nav-menu__item > a.nav-menu__link:hover, 
+  li.nav-menu__item.open > a.nav-menu__link, 
+	li.nav-submenu__item:hover > a.nav-menu__link{
 		color:white;
 	}
 
 
-
-	li.nav-menu__item.nav--credit:hover,
-	/* li.nav-menu__item.nav--credit:focus,
-	li.nav-menu__item.nav--credit.open, */
-	li.nav-menu__item.nav--credit.open:after, 
-	li.nav-menu__item.nav--credit > ul.nav-submenu-list li.open {
+	li.nav-menu__item.nav--credit a:hover, /*When top-level link is hovered over */
+	li.nav-menu__item.nav--credit a:focus, /*When top-level link is focused on */
+	li.nav-menu__item.nav--credit.open,  /* when submenu is open */
+	li.nav-menu__item.nav--credit.open:after,  /* thick underline */
+	li.nav-menu__item.nav--credit > ul.nav-submenu-list li:hover { /* Sub-menu item hover */
 		background: #674F83;
 	}
 
-	li.nav-menu__item.nav--banking:hover,
-	li.nav-menu__item.nav--banking:focus,
+	li.nav-menu__item.nav--banking a:hover,
+	li.nav-menu__item.nav--banking a:focus,
 	li.nav-menu__item.nav--banking.open,
-	li.nav-menu__item.nav--banking > ul.nav-submenu-list li.open {
+	li.nav-menu__item.nav--banking.open:after, 
+	li.nav-menu__item.nav--banking > ul.nav-submenu-list li:hover {
 		background: #2e842e;
 	}
-	li.nav-menu__item.nav--brokerages.hover, 
-	li.nav-menu__item.nav--brokerages.focus, 
+	li.nav-menu__item.nav--brokerages a:hover, 
+	li.nav-menu__item.nav--brokerages a:focus, 
 	li.nav-menu__item.nav--brokerages.open, 
 	li.nav-menu__item.nav--brokerages.open:after, 
-	li.nav-menu__item.nav--brokerages > ul.nav-submenu-list li.open  {
+	li.nav-menu__item.nav--brokerages > ul.nav-submenu-list li:hover  {
 		background: #104471;
 	}
 
-	li.nav-menu__item.nav--loans.hover,
-	li.nav-menu__item.nav--loans.focus,  
+	li.nav-menu__item.nav--loans a:hover,
+	li.nav-menu__item.nav--loans a:focus,  
 	li.nav-menu__item.nav--loans.open, 
 	li.nav-menu__item.nav--loans.open:after, 
-	li.nav-menu__item.nav--loans > ul.nav-submenu-list li.open  {
+	li.nav-menu__item.nav--loans > ul.nav-submenu-list li:hover  {
 		background: #936;
 	}
-	li.nav-menu__item.nav--blog.hover, 
-	li.nav-menu__item.nav--blog.focus, 
+	li.nav-menu__item.nav--blog a:hover, 
+	li.nav-menu__item.nav--blog a:focus, 
 	li.nav-menu__item.nav--blog.open, 
 	li.nav-menu__item.nav--blog.open:after, 
-	li.nav-menu__item.nav--blog > ul.nav-submenu-list li.open  {
+	li.nav-menu__item.nav--blog > ul.nav-submenu-list li:hover  {
 		background: #369;
 	}
 
-	/* Initially hide sub-menus by default */
+	/* Initially hides sub-menus by default */
 	ul.nav-submenu-list{
 		display:none;
 		border: 1px solid rgba(151,151,151,0.47);
 		top: 100%;
-		left:0;
+		left:-1px;
 		right:0;
 		position:absolute;
 		width:auto;
 		width: 175px;
 		font-size:.8em;
+		border-top:none;
 	}
 
 	.nav-submenu-list > li a.nav-menu__link {
 		padding: 8px 5px;
 	}
 
-	/* Display submenu when top-level menu item is hovered over */
+	/* Displays submenu when top-level menu item is hovered over */
 	.nav-menu__item.open .nav-submenu-list {
 		display:block;
 	}
 }
 
-/* Hide submenus on smaller screens */
+/* Hides submenus on smaller screens */
 @media screen and (max-width:1024px){
 	.nav-submenu-list{display:none;}
 	button.nav-arrow{display:none;}
