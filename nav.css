@@ -240,7 +240,7 @@ amp-img.nav__logo img {
 	}
 }
 
-.nav__byline__link:hover {
+.nav__byline__link.open {
 	border-bottom: 1px solid #6e6e6e
 }
 
@@ -323,11 +323,11 @@ amp-img.nav__logo img {
 	transition: 0.3s ease all
 }
 
-.nav-menu__link:hover {
+.nav-menu__link.open {
 	color: #474747
 }
 
-.nav-menu__link:hover:after {
+.nav-menu__link.open:after {
 	opacity: 1;
 	bottom: 0
 }
@@ -394,10 +394,33 @@ amp-img.nav__logo img {
 }
 /* THE ABOVE IS INTENDED TO RETAIN ORIGINAL/INITIAL FUNCTIONALITY */  
 /* THE FOLLOWING ADDS DROP-DOWN STYLING */
+
+.nav{
+	margin-right:75px; /* In order to make space for blog dropdown */
+}
 .nav-menu__link:after{display:none;} /* to remove previous styling*/
 
+button.nav-arrow{
+	border:none;
+	display:flex;
+	align-items: flex-end;
+	background:transparent;
+}
+button.nav-arrow:hover{
+	cursor:pointer;
+}
+button.nav-arrow svg{
+	width:15px;
+	height:15px;
+}
+li.has-submenu:hover svg,
+li.has-submenu:focus svg,
+li.has-submenu.open svg{
+	fill:white;
+}
 /* adds underline after top-level item */
-li.nav-menu__item:after {
+
+li.has-submenu:after {
 	position: absolute;
 	display:block;
 	content: "";
@@ -410,9 +433,12 @@ li.nav-menu__item:after {
 	transition: 0.3s ease all;
 }
 
-li.nav-menu__item:hover:after{
+li.nav-menu__item:hover,
+li.nav-menu__item:focus,
+li.has-submenu.open:after{
 	opacity:1;
 }
+
 /* general styling for lists within the nav */
 .nav-menu ul {
 	list-style:none;
@@ -443,33 +469,51 @@ li.nav-menu__item:hover:after{
 
 /* Top-level and submenu links should appear white when hovered over */
 li.nav-menu__item:hover > a.nav-menu__link,
-li.nav-submenu__item:hover > a.nav-menu__link{
+li.nav-menu__item:focus > a.nav-menu__link,
+li.nav-menu__item.open > a.nav-menu__link,
+li.nav-submenu__item.open > a.nav-menu__link{
 	color:white;
 }
 
+li.nav-menu__item:active{
+	border-top:2px solid black;
+}
+
 li.nav-menu__item.nav--credit:hover,
-li.nav-menu__item.nav--credit:hover:after, 
-li.nav-menu__item.nav--credit > ul.nav-submenu-list li:hover {
+li.nav-menu__item.nav--credit:focus,
+li.nav-menu__item.nav--credit.open,
+li.nav-menu__item.nav--credit.open:after, 
+li.nav-menu__item.nav--credit > ul.nav-submenu-list li.open {
 	background: #674F83;
 }
+
 li.nav-menu__item.nav--banking:hover,
-li.nav-menu__item.nav--banking:hover:after, 
-li.nav-menu__item.nav--banking > ul.nav-submenu-list li:hover {
+li.nav-menu__item.nav--banking:focus,
+li.nav-menu__item.nav--banking.open,
+li.nav-menu__item.nav--banking.open:after, 
+li.nav-menu__item.nav--banking > ul.nav-submenu-list li.open {
 	background: #2e842e;
 }
-li.nav-menu__item.nav--brokerages:hover, 
-li.nav-menu__item.nav--brokerages:hover:after, 
-li.nav-menu__item.nav--brokerages > ul.nav-submenu-list li:hover  {
+li.nav-menu__item.nav--brokerages.hover, 
+li.nav-menu__item.nav--brokerages.focus, 
+li.nav-menu__item.nav--brokerages.open, 
+li.nav-menu__item.nav--brokerages.open:after, 
+li.nav-menu__item.nav--brokerages > ul.nav-submenu-list li.open  {
 	background: #104471;
 }
-li.nav-menu__item.nav--loans:hover, 
-li.nav-menu__item.nav--loans:hover:after, 
-li.nav-menu__item.nav--loans > ul.nav-submenu-list li:hover  {
+
+li.nav-menu__item.nav--loans.hover,
+li.nav-menu__item.nav--loans.focus,  
+li.nav-menu__item.nav--loans.open, 
+li.nav-menu__item.nav--loans.open:after, 
+li.nav-menu__item.nav--loans > ul.nav-submenu-list li.open  {
 	background: #936;
 }
-li.nav-menu__item.nav--blog:hover, 
-li.nav-menu__item.nav--blog:hover:after, 
-li.nav-menu__item.nav--blog > ul.nav-submenu-list li:hover  {
+li.nav-menu__item.nav--blog.hover, 
+li.nav-menu__item.nav--blog.focus, 
+li.nav-menu__item.nav--blog.open, 
+li.nav-menu__item.nav--blog.open:after, 
+li.nav-menu__item.nav--blog > ul.nav-submenu-list li.open  {
 	background: #369;
 }
 
@@ -491,6 +535,6 @@ ul.nav-submenu-list{
 }
 
 /* Display submenu when top-level menu item is hovered over */
-.nav-menu__item:hover .nav-submenu-list {
+.nav-menu__item.open .nav-submenu-list {
 	display:block;
 }
