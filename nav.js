@@ -10,6 +10,12 @@ $(document).ready(() => {
 					body.classList.toggle('body--fixed');
 			})
 	}
+
+	//To ensure "nav--active is removed" on resize
+	$(window ).resize(function() {
+		var width = $( window ).width();
+		if(width > 1024){$(".nav__wrapper").removeClass("nav--active")}
+	});
 	mobileNav();
 
 		//Pass in a parent list item node, and a boolean value to indicate whether that 
