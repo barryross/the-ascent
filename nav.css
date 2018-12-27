@@ -506,9 +506,10 @@ amp-img.nav__logo img {
 
 	/* Top-level and submenu links should appear white when hovered over */
 	li.nav-menu__item > a.nav-menu__link:hover,
-	li.nav-menu__item > a.nav-menu__link:hover, 
+	li.nav-menu__item > a.nav-menu__link:focus, 
   li.nav-menu__item.open > a.nav-menu__link, 
-	li.nav-submenu__item:hover > a.nav-menu__link{
+	li.nav-submenu__item:hover > a.nav-menu__link,
+	li.nav-submenu__item > a.nav-menu__link:focus{
 		color:white;
 	}
 
@@ -559,7 +560,6 @@ amp-img.nav__logo img {
 		left:-1px;
 		right:0;
 		position:absolute;
-		width:auto;
 		width: 175px;
 		font-size:.8em;
 		border-top:none;
@@ -579,7 +579,6 @@ amp-img.nav__logo img {
 @media screen and (max-width:1024px){
 	.nav-submenu-list{display:none;}
 	button.nav-arrow{display:none;}
-	.nav
 	.nav-menu__item:hover a:after{
 		display:block;
 		bottom:0px;
